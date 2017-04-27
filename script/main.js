@@ -31,6 +31,9 @@ function send() {
 
     var clear = document.getElementById("text");
     clear.value = "";
+    clear.setAttribute("style","font-size:14px");
+    clear.setAttribute("rows","1");
+
 }
 
 // Receiver side
@@ -65,8 +68,41 @@ function receive() {
 
 }
 
+function able() {
+      var text = document.getElementById("text");
+      var btn = document.getElementById("sendbtn");
+      var len = text.value.length;
+      console.log(len);
+      
+      if ( len > 0 ) {
 
+        btn.removeAttribute("disabled");
 
+      }
+      else {
 
+        btn.setAttribute("disabled","disabled")
 
+      }
+
+      if ( len > 15 )
+      {
+         
+          text.setAttribute("style","font-size:11px");
+      }
+      else {
+
+          text.setAttribute("style","font-size:14px");
+      }
+
+      if ( len > 70 ) 
+      {
+          
+          text.setAttribute("rows","2");
+      }
+      else { 
+          text.setAttribute("rows","1");
+      }
+     
+}
 
