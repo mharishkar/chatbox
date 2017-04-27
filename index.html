@@ -17,8 +17,8 @@
         <div class="col-md-5 col-md-offset-1">
            
             <div class="sender">
-                <textarea rows="2" id="text" placeholder="click to type" class="chatbox"></textarea>
-                <button class="btn send" id="sendbtn"  onclick="send()">send</button>
+                <textarea rows="1" id="text"  placeholder="enter your message" class="chatbox" onkeyup="able()"></textarea>
+                <button class="btn send" id="sendbtn" disabled="disabled" onclick="send()" >send</button>
             </div>
              <div class="area" id="send">
              </div>
@@ -28,8 +28,8 @@
         <div class="col-md-5  col-md-offset-1">
             
             <div class="sender">
-                <textarea rows="2" id="text1" placeholder="click to type" class="chatbox"></textarea>
-                <button class="btn send" id="receivebtn" onclick="receive()" >send</button>
+                <textarea rows="2" id="text1" placeholder="enter your message" class="chatbox"></textarea>
+                <button class="btn send" id="receivebtn" onclick="receive()">send</button>
             </div>
             <div class="area" id="receive">
             </div>
