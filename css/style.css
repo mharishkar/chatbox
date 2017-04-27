@@ -55,7 +55,6 @@ body::-moz-scrollbar{
 }*/
 
 .red {
-   box-sizing: border-box;
    background-color: #4080ff;
    max-width: 350px;
    color: white;
@@ -63,10 +62,11 @@ body::-moz-scrollbar{
    padding: 15px;
    margin-top: 10px;
    float: right;
+   box-sizing: border-box;
 }
 
 .red1 {
-   box-sizing: border-box;
+   /*box-sizing: border-box;*/
    background-color:  rgba(128, 128, 128, 0.39);
    max-width: 350px;
    color: black;
