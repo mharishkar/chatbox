@@ -30,9 +30,11 @@ function send() {
     // clear the textbox
 
     var clear = document.getElementById("text");
+     var btn = document.getElementById("sendbtn");
     clear.value = "";
     clear.setAttribute("style","font-size:14px");
     clear.setAttribute("rows","1");
+    btn.setAttribute("disabled","disabled");
 
 }
 
@@ -81,7 +83,7 @@ function able() {
       }
       else {
 
-        btn.setAttribute("disabled","disabled")
+        btn.setAttribute("disabled","disabled");
 
       }
 
@@ -105,4 +107,3 @@ function able() {
       }
      
 }
-
