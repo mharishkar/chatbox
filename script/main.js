@@ -1,78 +1,88 @@
+
 function send() {
+    
+    var userinput   = document.getElementById("textarealeft").value;
+    child           = document.createElement("div"),
+    msgarealeft     = document.getElementById("msgarealeft"),
+    parent          = document.createElement("div");
+    child.appendChild(document.createTextNode(userinput));
+    parent.className = "container-fluid";
+    parent.appendChild(child);
+    child.className  = "red";
+    msgarealeft.appendChild(parent); 
 
-    // create a element in sender side
-    var divi = document.createElement("div");
-    divi.className = "container";
-    var text = document.getElementById("text").value;
-    var node = document.createElement("div");
-    var data = document.createTextNode(text);
-    node.appendChild(data);
-    node.appendChild(divi);
-    node.className = "red";
-    var place = document.getElementById("send");
-    place.appendChild(node); 
-   
+    
 
+    var childr   = document.createElement("div"),
+    parentr      = document.createElement("div"),
+    msgarearight = document.getElementById("msgarearight");
+    childr.appendChild(document.createTextNode(userinput));
+    parentr.className = "container-fluid";
+    parentr.appendChild(childr);
+    childr.className  = "red1";
+    msgarearight.appendChild(parentr); 
 
+     if (msgarealeft.scrollHeight > 580) {
+        msgarealeft.scrollTop += 100;
+        msgarealeft.scrollLeft += 100;        
+    }
 
-    // create a element in receiver side
-    var divi1 = document.createElement("div");
-    divi1.className = "container";
-    var text1 = document.getElementById("text").value;
-    var node1 = document.createElement("div");
-    var data1 = document.createTextNode(text1);
-    node1.appendChild(data1);
-    node1.appendChild(divi1);
-    node1.className = "red1";
-    var place1 = document.getElementById("receive");
-    place1.appendChild(node1);
-
-    // clear the textbox
-
-    var clear = document.getElementById("text");
-     var btn = document.getElementById("sendbtn");
-    clear.value = "";
-    clear.setAttribute("style","font-size:14px");
-    clear.setAttribute("rows","1");
+    if (msgarearight.scrollHeight > 580) {
+        msgarearight.scrollTop += 100;
+        msgarearight.scrollLeft += 100;        
+    }
+    
+  
+    var textarealeft = document.getElementById("textarealeft"),
+    btn          = document.getElementById("btnleft");
+    textarealeft.value = "";
+    textarealeft.setAttribute("style","font-size:14px");
+    textarealeft.setAttribute("rows","1");
     btn.setAttribute("disabled","disabled");
-
 }
 
-// Receiver side
 
 function receive() {
-    var divi = document.createElement("div");
-    divi.className = "container";
-    var text = document.getElementById("text1").value;
-    var node = document.createElement("div");
-    var data = document.createTextNode(text);
-    node.appendChild(data);
-    node.appendChild(divi);
-    node.className = "red";
-    var place = document.getElementById("receive");
-    place.appendChild(node); 
+    var userinput   = document.getElementById("textarearight").value;
+    var child           = document.createElement("div"),
+    msgarearight     = document.getElementById("msgarearight"),
+    parent          = document.createElement("div");
+    child.appendChild(document.createTextNode(userinput));
+    parent.className = "container-fluid";
+    parent.appendChild(child);
+    child.className  = "red";
+    msgarearight.appendChild(parent); 
 
-    var divi1 = document.createElement("div");
-    divi1.className = "container";
-    var text1 = document.getElementById("text1").value;
-    var node1 = document.createElement("div");
-    var data1 = document.createTextNode(text1);
-    node1.appendChild(data1);
-    node1.appendChild(divi1);
-    node1.className = "red1";
-    var place1 = document.getElementById("send");
-    place1.appendChild(node1);
+    var childl   = document.createElement("div"),
+    parentl      = document.createElement("div"),
+    msgarealeft = document.getElementById("msgarealeft");
+    childl.appendChild(document.createTextNode(userinput));
+    parentl.className = "container-fluid";
+    parentl.appendChild(childl);
+    childl.className  = "red1";
+    msgarealeft.appendChild(parentl); 
+  
+    var textarearight = document.getElementById("textarearight"),
+    btn               = document.getElementById("btnright");
+    textarearight.value = "";
+    textarearight.setAttribute("style","font-size:14px");
+    textarearight.setAttribute("rows","1");
+    btn.setAttribute("disabled","disabled");
 
-    // clear the textbox
+    if (msgarealeft.scrollHeight > 580) {
+        msgarealeft.scrollTop += 200;
+        msgarealeft.scrollLeft += 100;        
+    }
 
-    var clear = document.getElementById("text1");
-    clear.value = "";
-
+    if (msgarearight.scrollHeight > 580) {
+        msgarearight.scrollTop += 200;
+        msgarearight.scrollLeft += 100;        
+    }
 }
 
 function able() {
-      var text = document.getElementById("text");
-      var btn = document.getElementById("sendbtn");
+      var text = document.getElementById("textarealeft");
+      var btn = document.getElementById("btnleft");
       var len = text.value.length;
       console.log(len);
       
@@ -97,13 +107,62 @@ function able() {
           text.setAttribute("style","font-size:14px");
       }
 
-      if ( len > 70 ) 
+      if ( len > 75 && len < 139 ) 
       {
           
           text.setAttribute("rows","2");
       }
+      else  if ( len > 140 ) 
+      {
+          
+          text.setAttribute("rows","3");
+      }
       else { 
           text.setAttribute("rows","1");
       }
-     
+      
+       
+}
+
+function ableright() {
+      var text = document.getElementById("textarearight");
+      var btn = document.getElementById("btnright");
+      var len = text.value.length;
+      console.log(len);
+      
+      if ( len > 0 ) {
+
+        btn.removeAttribute("disabled");
+
+      }
+      else {
+
+        btn.setAttribute("disabled","disabled");
+
+      }
+
+      if ( len > 15 )
+      {
+         
+          text.setAttribute("style","font-size:11px");
+      }
+      else {
+
+          text.setAttribute("style","font-size:14px");
+      }
+
+      if ( len > 75 && len < 139 ) 
+      {
+          
+          text.setAttribute("rows","2");
+      }
+      else  if ( len > 140 ) 
+      {
+          
+          text.setAttribute("rows","3");
+      }
+      else { 
+          text.setAttribute("rows","1");
+      }
+      
 }
